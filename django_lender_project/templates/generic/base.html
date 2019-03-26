@@ -9,8 +9,10 @@
         <nav>
             <a href="{% url 'home' %}">Home</a>
         </nav>
-        {% block content %}
-        <h4>Nothing to see</h4>
-        {% endblock content %}
+        <main>
+            {% block content %}
+            <h2>Nothing to see</h2>
+            {% endblock content %}
+        </main>
     </body>
 </html>

@@ -1,4 +1,4 @@
-from views import book_detail_view, book_list_view
+from .views import book_detail_view, book_list_view
 from django.urls import path
 
 urlpatterns = [

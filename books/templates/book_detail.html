@@ -1,5 +1,21 @@
 {% extends "generic/base.html" %}
 
 {% block content %}
-<h4>Something to see</h4>
+<h3>{{ book.title }}</h3>
+
+<p>By {{ book.author }}
+</p>
+
+<p>Year published: {{ book.year }}
+</p>
+
+<p>Date added: {{ book.date_added }}
+</p>
+
+<p>Current status: {{ book.status }}
+</p>
+
+<p>Last borrowed: {{ book.last_borrowed }}
+</p>
+
 {% endblock content %}
