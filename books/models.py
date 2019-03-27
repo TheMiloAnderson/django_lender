@@ -32,7 +32,7 @@ class Book(models.Model):
         return f'{self.title} | Status: {self.status}'
 
 
-@receiver(models.signals.post_save, sender=Book)
-def set_last_borrowed(sender, instance, **kwargs):
-    if instance.status in update_fields and instance.status == 'checked-out':
-        instance.last_borrowed = timezone.now
+# @receiver(models.signals.post_save, sender=Book)
+# def set_last_borrowed(sender, instance, **kwargs):
+#     if instance.status in instance.update_fields and instance.status == 'checked-out':
+#         instance.last_borrowed = timezone.now

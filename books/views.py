@@ -9,7 +9,7 @@ def book_detail_view(req, pk=None):
         'book': get_object_or_404(
             Book,
             id=pk,
-            user=request.user.id
+            user=req.user.id
         )
     }
     return render(req, 'book_detail.html', context)
@@ -18,6 +18,6 @@ def book_detail_view(req, pk=None):
 @login_required
 def book_list_view(req):
     context = {
-        'books': get_list_or_404(Book, user=request.user.id)
+        'books': get_list_or_404(Book, user=req.user.id)
     }
     return render(req, 'books_list.html', context)
