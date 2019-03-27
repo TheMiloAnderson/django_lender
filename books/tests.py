@@ -2,24 +2,28 @@ from django.test import TestCase, RequestFactory
 from .models import Book
 
 
+def populate_test_book_data():
+    Book.objects.create(
+        title='A Fire Upon the Deep',
+        author='Vernor Vinge',
+        year=1992
+    )
+    Book.objects.create(
+        title='A Deepness in the Sky',
+        author='Vernor Vinge',
+        year=1999
+    )
+    Book.objects.create(
+        title='The Children of the Sky',
+        author='Vernor Vinge',
+        year=2011
+    )
+
+
 class TestBookModel(TestCase):
 
     def setUp(self):
-        Book.objects.create(
-            title='A Fire Upon the Deep',
-            author='Vernor Vinge',
-            year=1992
-        )
-        Book.objects.create(
-            title='A Deepness in the Sky',
-            author='Vernor Vinge',
-            year=1999
-        )
-        Book.objects.create(
-            title='The Children of the Sky',
-            author='Vernor Vinge',
-            year=2011
-        )
+        populate_test_book_data()
 
     def test_book_data(self):
         one = Book.objects.get(year=1992)
@@ -37,21 +41,7 @@ class TestBookViews(TestCase):
 
     def setUp(self):
         self.request = RequestFactory()
-        Book.objects.create(
-            title='A Fire Upon the Deep',
-            author='Vernor Vinge',
-            year=1992
-        )
-        Book.objects.create(
-            title='A Deepness in the Sky',
-            author='Vernor Vinge',
-            year=1999
-        )
-        Book.objects.create(
-            title='The Children of the Sky',
-            author='Vernor Vinge',
-            year=2011
-        )
+        populate_test_book_data()
     
     def test_book_detail_view(self):
         from .views import book_detail_view

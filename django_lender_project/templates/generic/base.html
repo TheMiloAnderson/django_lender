@@ -14,7 +14,15 @@
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'book_list' %}">Books</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li><a href="{% url 'book_list' %}">Admin</a></li>
+                {% endif %}
+                <li><a href="{% url 'django_registration_register' %}">Signup</a></li>
+                <li><a href="{% url 'book_list' %}">Login</a></li>
+                <li><a href="{% url 'book_list' %}">Logout</a></li>
             </ul>
         </nav>
         </header>
