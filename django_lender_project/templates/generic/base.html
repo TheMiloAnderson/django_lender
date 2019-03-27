@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang= "en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport content" content="width+device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset ="UTF-8">
+        <meta name = "viewport content" content = "width+device-width, initial-scal=1.0">
+        <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+        {% block title %}
+        {% endblock title %}
     </head>
     <body>
+        <header>
+            <h1>Django Lender</h1>
+        </header>
         <nav>
-            <a href="{% url 'home' %}">Home</a>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+            </ul>
         </nav>
+        </header>
         <main>
             {% block content %}
             <h2>Nothing to see</h2>
             {% endblock content %}
         </main>
+        <footer></footer>
     </body>
 </html>

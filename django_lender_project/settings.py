@@ -27,6 +27,8 @@ DEBUG = os.environ.get('DEBUG') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
 
 # Application definition
 
