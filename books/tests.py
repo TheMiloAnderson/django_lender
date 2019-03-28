@@ -1,6 +1,7 @@
 from django.test import TestCase, RequestFactory
 from .models import Book
 from django.contrib.auth.models import User
+from django.core import mail
 
 
 def populate_test_book_data(user=None):
@@ -73,3 +74,21 @@ class TestBookViews(TestCase):
         self.assertIn(b'A Fire Upon the Deep', res.content)
         self.assertIn(b'A Deepness in the Sky', res.content)
         self.assertIn(b'The Children of the Sky', res.content)
+
+
+# class TestClientAuth(TestCase):
+
+#     def test_registration(self):
+#         from django_registration.views import RegistrationView
+#         self.request = RequestFactory()
+#         req = self.request.post(
+#             '/accounts/register',
+#             data={
+#                 'username': 'Milo',
+#                 'email': 'milo@test.com',
+#                 'password': 'uncommon',
+#                 'password2': 'uncommon'
+#             }
+#         )
+#         res = RegistrationView(req)
+#         self.assertEqual(len(mail.outbox), 1)
