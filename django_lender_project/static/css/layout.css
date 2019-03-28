@@ -15,8 +15,12 @@ body {
     min-height: 100vh;
 }
 
-header h5 {
+header h1 {
+    float: left;
+}
+header h4 {
     float: right;
+    font-size: 1.2em;
 }
 main {
     padding-top: 14px;
@@ -30,7 +34,7 @@ main {
                                 "main"
                                 "footer";
         grid-template-columns: 100%;
-        grid-template-rows: 100px 50px 1fr 20px;
+        grid-template-rows: 140px 50px 1fr 20px;
     }
     h1 {
         font-size: 2.8em;
@@ -45,11 +49,5 @@ main {
         float: left;
         font-size: .9em;
         padding: 6px;
-    }
-    nav #auth-nav {
-        margin-top: -100%;
-    }
-    nav #auth-nav a {
-        float: right;
     }
 }
