@@ -1,0 +1,6 @@
+header h1:before {
+    content: url('/static/assets/dino.png');
+}
+main table.detail tr td:nth-child(1) {
+    font-weight: bold;
+}

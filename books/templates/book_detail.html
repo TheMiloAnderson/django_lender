@@ -7,19 +7,27 @@
 {% block content %}
 <h3>{{ book.title }}</h3>
 
-<p>By {{ book.author }}
-</p>
-
-<p>Year published: {{ book.year }}
-</p>
-
-<p>Date added: {{ book.date_added|date:"SHORT_DATE_FORMAT" }}
-</p>
-
-<p>Current status: {{ book.status }}
-</p>
-
-<p>Last borrowed: {{ book.last_borrowed }}
-</p>
+<table class="detail">
+    <tr>
+        <td>Author:</td>
+        <td>{{ book.author }}</td>
+    </tr>
+    <tr>
+        <td>Year Published:</td>
+        <td>{{ book.year }}</td>
+    </tr>
+    <tr>
+        <td>Added to Library:</td>
+        <td>{{ book.date_added|date:"SHORT_DATE_FORMAT" }}</td>
+    </tr>
+    <tr>
+        <td>Current Status:</td>
+        <td>{{ book.status }}</td>
+    </tr>
+    <tr>
+        <td>Last Borrowed:</td>
+        <td>{{ book.last_borrowed }}</td>
+    </tr>
+</table>
 
 {% endblock content %}
