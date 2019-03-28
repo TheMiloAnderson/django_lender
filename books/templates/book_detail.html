@@ -1,5 +1,9 @@
 {% extends "generic/base.html" %}
 
+{% block title %}
+<title>Books</title>
+{% endblock title %}
+
 {% block content %}
 <h3>{{ book.title }}</h3>
 
@@ -9,7 +13,7 @@
 <p>Year published: {{ book.year }}
 </p>
 
-<p>Date added: {{ book.date_added }}
+<p>Date added: {{ book.date_added|date:"SHORT_DATE_FORMAT" }}
 </p>
 
 <p>Current status: {{ book.status }}
