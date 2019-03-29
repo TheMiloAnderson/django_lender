@@ -4,3 +4,10 @@ header h1:before {
 main table.detail tr td:nth-child(1) {
     font-weight: bold;
 }
+main table.detail td {
+    padding-bottom:15px;
+}
+img.detail-img {
+    float: left;
+    margin-right: 20px;
+}
