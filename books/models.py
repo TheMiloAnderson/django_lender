@@ -26,10 +26,11 @@ class Book(models.Model):
     last_borrowed = models.DateTimeField(default=timezone.now, blank=True)
 
     def __repr__(self):
-        return f'<Note: {self.title} | Status: {self.status}>'
+        return f'<Title: {self.title} | Status: {self.status}>'
 
     def __str__(self):
         return f'{self.title} | Status: {self.status}'
+
 
         # @receiver(models.signals.post_save, sender=Book)
 

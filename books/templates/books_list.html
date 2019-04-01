@@ -6,11 +6,21 @@
 
 {% block content %}
 <h3>All Books:</h3>
+<table>
+<thead>
+    <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td colspan="2">Status</td>
+    </tr>
+</thead>
 {% for book in books %}
-<p>
-    <a href="{% url "book_detail" pk=book.id %}">
-        {{ book.title }} | {{ book.author }} | {{ book.status }}
-    </a>
-</p>
+<tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.status }}</td>
+    <td><a href="{% url "book_detail" pk=book.id %}">Details</a></td>
+</tr>
 {% endfor %}
+</table>
 {% endblock content %}

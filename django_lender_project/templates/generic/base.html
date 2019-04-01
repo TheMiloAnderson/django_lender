@@ -1,15 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang= "en">
     <head>
         <meta charset ="UTF-8">
         <meta name = "viewport content" content = "width+device-width, initial-scal=1.0">
         <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+        <link rel="icon" type="image/png" href="{% static 'assets/dino.png' %}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        <link rel="stylesheet" href="{% static 'css/module.css' %}">
         {% block title %}
         {% endblock title %}
     </head>
     <body>
         <header>
             <h1>Django Lender</h1>
+            <h4>Welcome, {{ user.username }}</h4>
         </header>
         <nav>
             <ul>

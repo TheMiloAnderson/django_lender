@@ -12,6 +12,7 @@ coverage = "*"
 django = "*"
 psycopg2-binary = "*"
 django-registration = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
