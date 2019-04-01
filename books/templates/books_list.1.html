@@ -1,0 +1,40 @@
+{% extends "generic/base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Books</title>
+{% endblock title %}
+
+{% block content %}
+<h3>All Books:</h3>
+
+<script type="text/x-template" id="books-list-template">
+<table>
+    <thead>
+        <tr>
+            <th v-for="col in columns">[[ col | capitalize ]]</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="book in books">
+            <td v-for="col in columns">
+                [[ book[col] ]]
+            </td>
+            <td><a :href="book.url">Details</a></td>
+        </tr>
+    </tbody>
+</table>
+</script>
+
+<div id="vue-booklist">
+    <books-list
+        :columns="columns" 
+        :books="books">
+    </books-list>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+{% endblock content %}

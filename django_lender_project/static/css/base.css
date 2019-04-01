@@ -43,8 +43,10 @@ main a {
 main a:hover {
     color: darkorange;
 }
-main table thead {
+main table thead th {
     font-weight: bold;
+    text-align: left;
+    font-size: 1.2em;
 }
 main table td {
     padding-right: 30px;
